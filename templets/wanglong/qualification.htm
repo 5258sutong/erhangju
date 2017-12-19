@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="二航市政" />
+		<meta name="description" content="二航市政" />
+		<title>二航市政</title>
+		<link href="/public/css/global1.css?v=198" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/public/css/jPicture.min.css" />
+		<link rel="stylesheet" type="text/css" href="http://static.wujigang.cn/hkwlCMS/content/style/content.css?v=20171212">
+		<link href="http://static.wujigang.cn/hkwlCMS/common/style/reset.css?v=20171212" rel="stylesheet" type="text/css" media="all" />
+		<script src="/public/js/jquery-3.2.1.js"></script>
+		<script src="/public/js/jquery.kxbdmarquee.js"></script>
+		<script src="/public/js/jPicture.min.js"></script>
+
+	</head>
+
+	<body>
+
+		{dede:include filename="head.htm"/}
+
+		<script>
+			// Javascript 代码
+			jPicture(".banner", {
+				type: "slide",
+				autoplay: 4000
+			});
+		</script>
+
+		<div class="content_con">
+			<div class="container">
+				<h2>{dede:field name='typename' function="GetTypeName（@me）"/}</h2>
+				<div class="content_info">
+
+					<span>发布时间：{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</span>
+					<span class="m_left30">来源：{dede:field.writer /}</span>
+
+					<span class="m_left30">分享：
+						<div class="bdsharebuttonbox"  style="display:inline-block;position:relative;top:24px;"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+						<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+					</span>
+
+				</div>
+				<div class="content_detail">
+
+					<p><span>{dede:field.content/}</span></p>
+
+				</div>
+			</div>
+			<div class="hot_list">
+				<div class="list_con">
+					<div class="hot_title">热点新闻</div>
+					<ul>
+						{dede:arclist flag='h' typeid="11" limit='0,9' col='1'}
+						<li><span>[field:pubdate function="MyDate('Y-m-d',@me)"/]</span>
+							<a href="[field:arcur/]">[field:textlink/]</a>
+						</li>
+						{/dede:arclist}
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear"></div>
+		{dede:include filename="footer.htm"/}
+
+		<script type="text/javascript">
+			var h
+
+			function bannerh() {
+				var w = $(window).width()
+				h = 600 / 1920 * w
+				$('.banner').height(h)
+			}
+			bannerh()
+			$(window).resize(function() {
+				bannerh()
+			})
+
+			// 二维码top计算
+			function ewmtop() {
+				var scrolltop = $(window).scrollTop()
+				var height = $(window).height()
+				var top = height - 200 + scrolltop
+				if(top <= h) {
+					top = h + 50
+				}
+				$('.floRig').animate({
+					'top': top
+				}, 500)
+			}
+
+			ewmtop()
+
+			var scrollst
+
+			$(window).scroll(function() {
+				clearTimeout(scrollst)
+				scrollst = setTimeout(ewmtop, 300)
+			})
+		</script>
+
+		<script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+		<script src="/public/js/global.js"></script>
+		<script src="/public/js/banner_dan.js"></script>
+		<script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="/public/js/jquery.event.drag.js"></script>
+		<script type="text/javascript" src="/public/js/jquery.touchslider.js"></script>
+		<script type="text/javascript" src="/public/js/banner.js"></script>
+	</body>
+
+</html>

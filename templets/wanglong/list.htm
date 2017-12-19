@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="二航市政" />
+		<meta name="description" content="二航市政" />
+		<title>二航市政</title>
+		<link href="/public/css/global1.css?v=198" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/public/css/jPicture.min.css" />
+		<link rel="stylesheet" type="text/css" href="/public/css/list.css"/>
+		<script src="/public/js/jquery-3.2.1.js"></script>
+		<script src="/public/js/jquery.kxbdmarquee.js"></script>
+		<script src="/public/js/jPicture.min.js"></script>
+	</head>
+
+	<body>
+		
+		
+		{dede:include filename="head.htm"/}
+		<script>
+            // Javascript 代码
+            jPicture(".banner", {
+                type: "slide",
+                autoplay: 4000
+            });
+        </script>
+		<div class="hei30"></div>
+		<div class="clear"></div>
+		<div class="list_con">
+			<div class="area_con">
+				<h2>新闻资讯<span>NEWS</span></h2>
+				<ul>
+					{dede:channel typeid='2' type='son'}
+					<li>
+						<a href="[field:typeurl/]">[field:typename/]</a>
+					</li>
+					{/dede:channel}
+				</ul>
+			</div>
+			<div class="cell_con">
+
+				<h2><span>{dede:field.typename/}</span></h2>
+				<ul>
+					{dede:list flag='h' pagesize='9' col='1'}
+					<li>
+						<a href="">[field:textlink/]</a>
+						<span>2017-12-05</span>
+					</li>
+					{/dede:list}
+				</ul>
+<div class="hidden-xs">
+
+					<div class="met_pager" style="width: 700px;">
+						{dede:pagelist listitem="info,pre,next,pageno" listsize="5"/}
+						<span class="PageText">转至第</span>
+
+						<input type="text" id="metPageT" data-pageurl="news.php?lang=cn&class1=2&page=||2" value="1">
+
+						<input type="button" id="metPageB" value="页">
+
+					</div>
+
+				</div>
+				
+			</div>
+			<div class="clear"></div>
+		</div>
+	{dede:include filename="footer.htm"/}
+	
+	<script type="text/javascript">
+		var h
+		function bannerh () {
+			var w = $(window).width()
+			h = 600/1920*w
+			$('.banner').height(h)
+		}
+		bannerh()
+		$(window).resize(function () {
+			bannerh()
+		})
+
+		// 二维码top计算
+		function ewmtop () {
+			var scrolltop = $(window).scrollTop()
+			var height = $(window).height()
+			var top = height-200 + scrolltop
+			if (top <= h) {
+				top = h + 50
+			}
+			$('.floRig').animate({'top': top}, 500)
+		}
+
+		ewmtop()
+
+		var scrollst
+		
+		$(window).scroll(function () {
+			clearTimeout(scrollst)
+			scrollst = setTimeout(ewmtop, 300)
+		})
+	</script>
+	
+
+	<script src="/public/js/global.js"></script>
+	<script src="/public/js/banner_dan.js"></script>
+	<script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/public/js/jquery.event.drag.js"></script>
+	<script type="text/javascript" src="/public/js/jquery.touchslider.js"></script>
+	<script type="text/javascript" src="/public/js/banner.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,71 @@
+<div class="top on">
+	<div class="top2">
+		<a href="#" class="logo1 fl"><img src="/public/picture/logo.png?v=2"></a>
+		<a href="#" class="logo2 fl"><img src="/public/picture/logo.png"></a>
+		<div class="menu fl">
+			<div class="menu_xun">
+				<a class="menu_title" href="/index.html">
+					<div class="menu_xian"></div>首页
+				</a>
+			</div>
+			{dede:channelartlist typeid='top' row='8'}
+			<div class="menu_xun">
+				<a class="menu_title">
+					<div class="menu_xian">
+						<div></div>
+					</div>{dede:field name='typename'/}
+				</a>
+				<ul>
+					  {dede:channel type='son' noself='yes'}
+					<li>
+						<a href="[field:typelink/]"> [field:typename/]</a>
+					</li>
+					  {/dede:channel}
+					
+				</ul>
+			</div>
+
+			{/dede:channelartlist}
+
+			<div class="clear"></div>
+		</div>
+		<div class="top_right fr">
+			<div class="top_right2 fr">
+				<a href="javascript:search();" class="fl search_icon" style="margin-top: 41px;margin-right: 45px;">
+					<img style="height:25px" src="/public/picture/search.png" />
+				</a>
+				<div class="search_box">
+					<form action="#" method="post" class="form_search">
+						<input type="text">
+						<button class="search-btn"><img style="height:25px" src="/public/picture/search.png" /></button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<div class="swiper-container1 banner">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<img src="/public/images/Abanner1.jpg?v=1" width="100%" />
+		</div>
+		<div class="swiper-slide">
+			<img src="/public/images/Abanner4.jpg?v=1" width="100%" />
+		</div>
+		<div class="swiper-slide">
+			<img src="/public/images/Abanner3.jpg?v=2" width="100%" />
+		</div>
+		<div class="swiper-slide">
+			<img src="/public/images/Abanner2.jpg?v=1" width="100%" />
+		</div>
+	</div>
+	<!-- 如果需要分页器 -->
+	<div class="swiper-pagination"></div>
+
+	<!-- 如果需要导航按钮 -->
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
+</div>

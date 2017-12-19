@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="二航市政" />
+		<meta name="description" content="二航市政" />
+		<title>二航市政</title>
+		<link href="/public/css/global1.css?v=198" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/public/css/jPicture.min.css" />
+
+		<script src="/public/js/jquery-3.2.1.js"></script>
+		<script src="/public/js/jquery.kxbdmarquee.js"></script>
+		<script src="/public/js/jPicture.min.js"></script>
+
+	</head>
+
+	<body>
+		
+		
+		{dede:include filename="head.htm"/}
+		<script>
+            // Javascript 代码
+            jPicture(".banner", {
+                type: "slide",
+                autoplay: 4000
+            });
+        </script>
+		<div class="hei30"></div>
+		<div class="clear"></div>
+		<div class="index3">
+				<div class="swiper-container index_xun" style="height: 410px;">
+					<div class="swiper-wrapper">
+						{dede:arclist flag='c' limit='0,5'}
+						<div class="swiper-slide">
+							<div class="index_new_text">
+								<div class="index_new_text_nei">
+									<div class="index_new_title"><span class="index_new_title1">[field:title/]</span><span class="index_new_title2">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span></div>
+									
+									<div class="index_new_link">了解更多>></div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="index_new_img"><img src="[field:litpic/]"></div>
+							<div class="clear"></div>
+						</div>
+						{/dede:arclist}
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+
+					<!-- 如果需要导航按钮 -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+
+			<div id="gsxw">
+			<div id="title" class="gsxw_title">
+					<div class="gsxw_title_wz pa15"><i class="iconfont"></i>公司新闻</div>
+					<div class="gsxw_more">
+						<a href="http://erhangju.localhost/erhangju/xinwenzhongxin/gongsiyaowen/" title="更多">更多<i class="iconfont" style="font-size: 14px;"></i></a>
+					</div>
+				</div>
+				<div>
+					<ul class="gsxw_ul">
+						{dede:arclist flag='h' typeid="11" limit='0,9' col='1'}
+						<li>
+							<a href="[field:arcur/]"  target="_blank"> [field:textlink/]</a> <span> [field:pubdate function="MyDate('Y-m-d',@me)"/]	</span>
+						</li>
+						{/dede:arclist}
+						
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+			jPicture(".swiper-container", {
+                type: "slide",
+                autoplay: 4000
+            });
+		</script>
+		<div class="clear hei30"></div>
+		<div style="overflow: hidden;margin: 0 auto;padding-top: 30px;width: 1200px;">
+			<img src="/public/picture/ct1.jpg" alt="" />
+		</div>
+		<div class="index1">
+			<div class="shipin">
+				<ul class="tex10" id="myul">
+					{dede:arclist typeid='35' limit='0,2'}
+					<li>
+						<a href="[field:arcurl/]">[field:title/]</a>
+						<a href="[field:arcurl/]"><img src="[field:litpic/]" style="width:400px;height:260px"></a>
+					</li>
+					{/dede:arclist}
+					
+				</ul> 
+			</div>
+			<script type="text/javascript">
+				$("#myul li:first-child").addClass('select');
+	
+			</script>
+			<script>
+				$(".shipin li").mouseover(function(){
+					$(this).children('first').addClass('select')
+					$(".select").removeClass("select")
+					$(this).addClass("select")
+				})
+			</script>
+			<div class="dangjian">
+				<div id="title" class="dangjian_title">
+					<div class="dangjian_title_wz pa15"><i class="iconfont" style="color:#f5f51e"></i>党建新闻</div>
+					<div class="dangjian_more">
+						<a href="http://erhangju.localhost/erhangju/xinwenzhongxin/dangjianxinwen/" title="更多">更多<i class="iconfont" style="font-size: 14px;"></i></a>
+					</div>
+				</div>
+				<div>
+					<ul class="dangjian_ul">
+						{dede:arclist  typeid="13" limit='0,9' col='1'}
+						<li>
+							<a href="[field:arcur/]"  target="_blank"> [field:textlink/]</a> <span>  [field:pubdate function="MyDate('Y-m-d',@me)"/]</span>
+						</li>
+						{/dede:arclist}
+						
+					</ul>
+				</div>
+			</div>
+		 
+			<div class="hangye">
+				<div id="title" class="hangye_title">
+					<div class="hangye_title_wz pa15"><img style="padding-right:10px" src="/public/picture/drip.png">行业动态</div>
+					<div class="hangye_more">
+						<a href="http://erhangju.localhost/erhangju/xinwenzhongxin/yixiandongtai/" title="更多">更多<i class="iconfont" style="font-size: 14px;"></i></a>
+					</div>
+				</div> 
+				<div>
+					<ul class="hangye_ul">
+						{dede:arclist flag='h' typeid="12" limit='0,9' col='1'}
+						<li>
+							<a href="[field:arcur/]"  target="_blank"> [field:textlink/]  </a> <span> [field:pubdate function="MyDate('Y-m-d',@me)"/]	</span>
+						</li>
+						{/dede:arclist}
+					</ul>
+				</div>
+			</div>
+			</div>
+		<div class="index2"></div>
+	</body>
+
+	<div class="clear"></div>
+	<script>
+		$('#gun').kxbdMarquee({
+			direction: 'left'
+		});
+	</script>
+	<div class="bottomBooks">
+		<div class="bottomBook bottomBook1 fl"> 
+			<h1>电子书屋</h1>
+			<div>
+				<a href="http://read.bookan.com.cn/zjd2hwj/">
+					<img src="/public/images/电子书屋.jpg">
+				</a>
+			</div>
+		</div>
+		<div class="bottomBook bottomBook2 fl"> 
+			<h1>报刊杂志</h1>
+			<div>
+				<a href="http://erhangju.localhost/erhangju/xinwenzhongxin/dianzikanwu/">
+					<img src="/public/images/报刊.jpg">
+				</a>
+			</div>
+		</div>
+		<div class="bottomBook bottomBook2b fl"> 
+			<h1>廉政邮箱</h1>
+			<div>
+				<a href="http://erhangju.localhost/plus/list.php?tid=34">
+					<img src="/public/images/信箱.jpg">
+				</a>
+			</div>
+		</div>
+		<div class="bottomBook bottomBook3 fr"> 
+			<h1>招聘信息</h1>
+			<div>
+				<a href="http://erhangju.localhost/plus/list.php?tid=31">
+					<img src="/public/images/招聘信息.jpg">
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	{dede:include filename="footer.htm"/}
+	
+	<script type="text/javascript">
+		var h
+		function bannerh () {
+			var w = $(window).width()
+			h = 600/1920*w
+			$('.banner').height(h)
+		}
+		bannerh()
+		$(window).resize(function () {
+			bannerh()
+		})
+
+		// 二维码top计算
+		function ewmtop () {
+			var scrolltop = $(window).scrollTop()
+			var height = $(window).height()
+			var top = height-200 + scrolltop
+			if (top <= h) {
+				top = h + 50
+			}
+			$('.floRig').animate({'top': top}, 500)
+		}
+
+		ewmtop()
+
+		var scrollst
+		
+		$(window).scroll(function () {
+			clearTimeout(scrollst)
+			scrollst = setTimeout(ewmtop, 300)
+		})
+	</script>
+	
+
+	<script src="/public/js/global.js"></script>
+	<script src="/public/js/banner_dan.js"></script>
+	<script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/public/js/jquery.event.drag.js"></script>
+	<script type="text/javascript" src="/public/js/jquery.touchslider.js"></script>
+	<script type="text/javascript" src="/public/js/banner.js"></script>
+	</body>
+
+</html>
